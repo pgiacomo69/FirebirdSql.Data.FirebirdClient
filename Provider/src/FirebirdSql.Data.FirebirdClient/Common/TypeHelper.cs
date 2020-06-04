@@ -188,6 +188,27 @@ namespace FirebirdSql.Data.Common
 				case IscCodes.blr_bool:
 					return IscCodes.SQL_BOOLEAN;
 
+				case IscCodes.blr_dec64:
+					return IscCodes.SQL_DEC16;
+
+				case IscCodes.blr_dec128:
+					return IscCodes.SQL_DEC34;
+
+				case IscCodes.blr_int128:
+					return IscCodes.SQL_INT128;
+
+				case IscCodes.blr_sql_time_tz:
+					return IscCodes.SQL_TIME_TZ;
+
+				case IscCodes.blr_timestamp_tz:
+					return IscCodes.SQL_TIMESTAMP_TZ;
+
+				case IscCodes.blr_ex_time_tz:
+					return IscCodes.SQL_TIME_TZ_EX;
+
+				case IscCodes.blr_ex_timestamp_tz:
+					return IscCodes.SQL_TIMESTAMP_TZ_EX;
+
 				default:
 					throw InvalidDataType(type);
 			}
