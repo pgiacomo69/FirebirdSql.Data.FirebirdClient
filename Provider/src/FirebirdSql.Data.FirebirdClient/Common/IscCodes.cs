@@ -897,6 +897,13 @@ namespace FirebirdSql.Data.Common
 		public const int blr_sql_date = 12;
 		public const int blr_sql_time = 13;
 		public const int blr_bool = 23;
+		public const int blr_dec64 = 24;
+		public const int blr_dec128 = 25;
+		public const int blr_int128 = 26;
+		public const int blr_sql_time_tz = 28;
+		public const int blr_timestamp_tz = 29;
+		public const int blr_ex_time_tz = 30;
+		public const int blr_ex_timestamp_tz = 31;
 
 		public const int blr_null = 45;
 
