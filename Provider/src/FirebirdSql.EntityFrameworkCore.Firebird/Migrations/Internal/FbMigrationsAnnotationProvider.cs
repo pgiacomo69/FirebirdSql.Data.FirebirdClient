@@ -31,6 +31,7 @@ namespace FirebirdSql.EntityFrameworkCore.Firebird.Migrations.Internal
 			: base(dependencies)
 		{ }
 
+#if NETSTANDARD2_0
 		public override IEnumerable<IAnnotation> For(IProperty property)
 		{
 			var valueGenerationStrategy = property.GetValueGenerationStrategy();
@@ -39,5 +40,9 @@ namespace FirebirdSql.EntityFrameworkCore.Firebird.Migrations.Internal
 				yield return new Annotation(FbAnnotationNames.ValueGenerationStrategy, valueGenerationStrategy);
 			}
 		}
+#else
+#warning In net 5.0 this mehod doesn't exists in base class, so?
+#endif
+
 	}
 }
