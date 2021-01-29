@@ -13,16 +13,23 @@
  *    All Rights Reserved.
  */
 
-//$Authors = Carlos Guzman Alvarez, Jiri Cincura (jiri@cincura.net)
+//$Authors = Jiri Cincura (jiri@cincura.net)
 
-using System.Runtime.InteropServices;
+using FirebirdSql.EntityFrameworkCore.Firebird.Scaffolding.Internal;
+using Microsoft.EntityFrameworkCore.Scaffolding;
+using NUnit.Framework;
 
-namespace FirebirdSql.Data.Client.Native.Marshalers
+namespace FirebirdSql.EntityFrameworkCore.Firebird.Tests.Scaffolding
 {
-	[StructLayout(LayoutKind.Sequential)]
-	internal struct ArrayBoundMarshal
+#pragma warning disable EF1001
+	public class ScaffoldingTests : EntityFrameworkCoreTestsBase
 	{
-		public short LowerBound;
-		public short UpperBound;
+		[Test]
+		public void JustCanRun()
+		{
+			var databaseModelFactory = new FbDatabaseModelFactory();
+			Assert.DoesNotThrow(() => databaseModelFactory.Create(Connection, new DatabaseModelFactoryOptions()));
+		}
 	}
+#pragma warning restore EF1001
 }
